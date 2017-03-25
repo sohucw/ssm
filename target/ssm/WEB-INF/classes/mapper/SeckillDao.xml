@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sohucw.dao.SeckillDao">
+
+    <!--目的:为dao接口方法提供sql语句配置
+    即针对dao接口中的方法编写我们的sql语句-->
+
+
+    <update id="reduceNumber">
+        UPDATE seckill
+        SET number = number-1
+        WHERE seckill_id=#{seckillId}
+        AND start_time <![CDATA[ <= ]]> #{killTime}
+        AND end_time >= #{killTime}
+        AND number > 0;
+    </update>
+
+
+    <select id="queryById" resultType="Seckill" parameterType="long">
+        SELECT *
+        FROM seckill
+        WHERE seckill_id=#{seckillId}
+    </select>
+
+
+
+    <select id="queryAll" resultType="Seckill">
+        SELECT *
+        FROM seckill
+        ORDER BY create_time DESC
+        limit #{offset},#{limit}
+    </select>
+
+
+</mapper>
+
+<!--
+        mapper总结：namespace是该xml对应的接口全名，select和update中的id对应方法名，
+        resultType是返回值类型，parameterType是参数类型（这个其实可选），最后#{...}中填写的是方法的参数，
+        看懂了是不是很简单！！我也这么觉得~ 还有一个小技巧要交给大家，
+        就是在返回Appointment对象包含了一个属性名为book的Book对象，那么可以使用"book.属性名"的方式来取值，
+        看上面queryByKeyWithBook方法的sql。-->
+
