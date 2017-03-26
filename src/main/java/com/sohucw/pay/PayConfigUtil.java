@@ -15,11 +15,11 @@ public class PayConfigUtil {
 
 
 	//以下相关参数需要根据自己实际情况进行配置
-	public static String APP_ID = "wxbb0099167e5553ddsss";// appid
+	public static String APP_ID = "wxbb0099167e5553dda";// appid
 
 	// public static String APP_SECRET = "0fb66116e9f46d2d71116b30f0addd85";// appsecret
-	public static String MCH_ID = "140426950211";// 你的商业号 1404269502
-	public static String API_KEY = "B54E40854C02698D8D86BB59B0ECFBF632";// API key
+	public static String MCH_ID = "14042695021";// 你的商业号 1404269502
+	public static String API_KEY = "B54E40854C02698D8D86BB59B0ECFBF6s";// API key
 
 
 	//http://172.24.82.29:8080/
