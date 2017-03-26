@@ -34,6 +34,19 @@ public class BookController {
 
 
 	// 用户管理
+	@RequestMapping(value = "/pay", method = RequestMethod.GET)
+	public String pay(ModelMap modelMap){
+		/*List<Book> book = bookService.getList();
+
+		modelMap.addAttribute("book", book);*/
+        // test weixn zhifu
+		return "pay";
+	}
+
+
+
+
+	// 用户管理
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String users(ModelMap modelMap){
 		// 找到user表里面的所有记录
